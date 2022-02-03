@@ -44,7 +44,36 @@ app.get("/past-work", (_req, res) => {
   });
 });
 
+/* -------------------------------------------------------------------------- */
+/*                      set up CRUD via queries                               */
+/* -------------------------------------------------------------------------- */
+
 app.get("/staff", (_req, res) => {
+  res.render("staff.ejs", {
+    staff,
+    title: "Staff",
+  });
+});
+
+app.get("/staff-delete", (req, res) => {
+  staff.pop();
+  res.render("staff.ejs", {
+    staff,
+    title: "Staff",
+  });
+});
+
+app.get("/staff-add", (req, res) => {
+  const { first_name, last_name } = req.query;
+  staff.push({ first_name, last_name });
+  res.render("staff.ejs", {
+    staff,
+    title: "Staff",
+  });
+});
+
+app.get("/staff-update", (req, res) => {
+  staff[0] = { first_name: "Updated", last_name: "Person" };
   res.render("staff.ejs", {
     staff,
     title: "Staff",
