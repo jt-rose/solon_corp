@@ -6,6 +6,7 @@
     <h1>Past Work</h1>
     <% for (let i = 0; i < pastWork.length; i++) { %>
     <li><%=pastWork[i].app + " built in " + pastWork[i].year %></li>
-    <% } %>
+    <% } %> <%- include("partials/footer.ejs") %> <%-
+    include("partials/paragraph.ejs") %>
   </body>
 </html>
