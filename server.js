@@ -1,4 +1,5 @@
 const express = require("express");
+const links = require("./models/links.json");
 
 const app = express();
 
@@ -15,7 +16,12 @@ app.get("/history", (_req, res) => {
 });
 
 app.get("/links", (_req, res) => {
-  res.render("links.ejs");
+  res.render("links.ejs", {
+    // you can also write links: links, but in JS
+    // when the object property name matches a variable storing the value,
+    // you can use this shorthand
+    links,
+  });
 });
 
 app.get("/past-work", (_req, res) => {

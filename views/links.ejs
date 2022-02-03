@@ -10,5 +10,10 @@
   </head>
   <body>
     <h1>Links</h1>
+    <ul>
+      <% for (let i = 0; i < links.length; i++) { %>
+      <li><%=links[i].link%></li>
+      <% } %>
+    </ul>
   </body>
 </html>
