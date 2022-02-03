@@ -1,0 +1,13 @@
+h1 {
+  color: blueviolet;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  text-decoration: underline;
+}
+
+nav li {
+  margin: 1em;
+}

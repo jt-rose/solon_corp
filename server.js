@@ -5,24 +5,33 @@ const pastWork = require("./models/pastWork.json");
 
 const app = express();
 
+app.use(express.static("public"));
+
 /* -------------------------------------------------------------------------- */
 /*                                normal routes                               */
 /* -------------------------------------------------------------------------- */
 app.get("/", (_req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", {
+    title: "Home",
+  });
 });
 
 app.get("/contact", (_req, res) => {
-  res.render("contact.ejs");
+  res.render("contact.ejs", {
+    title: "Contact",
+  });
 });
 
 app.get("/history", (_req, res) => {
-  res.render("history.ejs");
+  res.render("history.ejs", {
+    title: "History",
+  });
 });
 
 app.get("/links", (_req, res) => {
   res.render("links.ejs", {
     links: links,
+    title: "Links",
     // if the object property and value are the same word, ie: "links: links"
     // you can actually just write "links" as a shorthand, as shown below
   });
@@ -31,12 +40,14 @@ app.get("/links", (_req, res) => {
 app.get("/past-work", (_req, res) => {
   res.render("past-work.ejs", {
     pastWork,
+    title: "Past Work",
   });
 });
 
 app.get("/staff", (_req, res) => {
   res.render("staff.ejs", {
     staff,
+    title: "Staff",
   });
 });
 
