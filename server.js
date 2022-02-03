@@ -1,5 +1,6 @@
 const express = require("express");
 const links = require("./models/links.json");
+const staff = require("./models/staff.json");
 
 const app = express();
 
@@ -29,7 +30,9 @@ app.get("/past-work", (_req, res) => {
 });
 
 app.get("/staff", (_req, res) => {
-  res.render("staff.ejs");
+  res.render("staff.ejs", {
+    staff,
+  });
 });
 
 app.listen(3000, () => {

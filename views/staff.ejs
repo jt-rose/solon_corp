@@ -10,5 +10,10 @@
   </head>
   <body>
     <h1>Staff</h1>
+    <ul>
+      <% for (let i = 0; i < staff.length; i++) { %>
+      <li><%=staff[i].first_name + " " + staff[i].last_name%></li>
+      <% } %>
+    </ul>
   </body>
 </html>
